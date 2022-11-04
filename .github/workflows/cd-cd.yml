@@ -37,7 +37,7 @@ jobs:
     - name: Test
       run: dotnet test --no-build --verbosity normal --configuration ${{env.configuration}}
     - name: Publish
-      run: dotnet publish ${{env.configuration}} --output ${{runner.temp}}/publish
+      run: dotnet publish --configuration ${{env.configuration}} --output ${{runner.temp}}/publish
     - name: Upload the publish artifact
       uses: actions/upload-artifact@v3
       with:
